@@ -21,17 +21,16 @@ class _HomePageState extends State<HomePage> {
   }
 
   final List<Widget> _pages = [
-    // shop page
+    // Shop page
     const ShopPage(),
 
-    // cart page
+    // Cart page
     const CartPage(),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[200],
       bottomNavigationBar: MyBottomNavBar(
         onTabChange: (index) => navigateBottomBar(index),
       ),
@@ -39,9 +38,12 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Colors.transparent,
         leading: Builder(builder: (context) {
           return IconButton(
-            icon: Icon(
-              Icons.menu,
-              color: Colors.black,
+            icon: const Padding(
+              padding: EdgeInsets.only(left: 12.0),
+              child: Icon(
+                Icons.menu,
+                color: Colors.black,
+              ),
             ),
             onPressed: () {
               Scaffold.of(context).openDrawer();
