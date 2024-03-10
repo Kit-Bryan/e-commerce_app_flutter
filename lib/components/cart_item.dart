@@ -17,7 +17,7 @@ class CartItem extends StatefulWidget {
 
 class _CartItemState extends State<CartItem> {
   void removeItemFromCart() {
-    Provider.of<Cart>(context, listen:false).removeItemFromCart(widget.shoe);
+    Provider.of<Cart>(context, listen: false).removeItemFromCart(widget.shoe);
   }
 
   @override
@@ -29,7 +29,7 @@ class _CartItemState extends State<CartItem> {
       child: ListTile(
         leading: Image.asset(widget.shoe.imagePath),
         title: Text(widget.shoe.name),
-        subtitle: Text(widget.shoe.price),
+        subtitle: Text("RM " + widget.shoe.price),
         trailing: IconButton(
           icon: Icon(Icons.delete),
           onPressed: removeItemFromCart,
